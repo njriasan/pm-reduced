@@ -14,7 +14,6 @@ RUN setup/setup.sh
 WORKDIR /usr/src/app
 
 # cleanup
-RUN apt-get -y remove --purge build-essential
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 #add start script.

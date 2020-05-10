@@ -6,7 +6,7 @@ cd /usr/src/app && git pull origin master
 
 #TODO: start cron jobs
 # change python environment
-source activate emission-pm
+conda activate emission-pm
 
 # launch the webapp
 ./e-mission-py.bash pm.py

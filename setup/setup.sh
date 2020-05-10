@@ -5,11 +5,9 @@
 # - on OSX: /Users/<user>/miniconda3/bin/conda
 # - on Windows: C:/Users/<user>/Miniconda3/Scripts/conda
 
-. setup/check_for_conda.sh
-
 echo "Setting up blank environment"
 conda create --name emission-pm python=3.6
-conda activate emission-pm
+source activate emission-pm
 
 echo "Updating using conda now"
 conda env update --name emission-pm --file setup/environment36.yml

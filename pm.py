@@ -49,11 +49,11 @@ app = app()
 enc_key = None
 mongoHostPort = 27017
 _current_db = None
+url = "localhost"
 
 def _get_current_db():
     global _current_db
     if _current_db is None:
-        url = "localhost"
         print("Connecting to database URL "+url)
         _current_db = MongoClient(host=url, port=mongoHostPort).Stage_database
     return _current_db

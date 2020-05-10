@@ -7,7 +7,6 @@
 
 echo "Setting up blank environment"
 conda create --name emission-pm python=3.6
-source activate emission-pm
 
 echo "Updating using conda now"
 conda env update --name emission-pm --file setup/environment36.yml

@@ -1,9 +1,6 @@
 import json
 # To support dynamic loading of client-specific libraries
 import socket
-import logging
-import logging.config
-
 import requests
 
 from pymongo import MongoClient
@@ -417,14 +414,6 @@ def add_encrypt_key():
 # Future work may also include adding permission checks here.
 
 if __name__ == '__main__':
-    try:
-        webserver_log_config = json.load(open("conf/log/webserver.conf", "r"))
-    except:
-        webserver_log_config = json.load(open("conf/log/webserver.conf.sample", "r"))
-
-    logging.config.dictConfig(webserver_log_config)
-    logging.debug("This should go to the log file")
-    
     # To avoid config file for tests
     server_host = socket.gethostbyname(socket.gethostname())
 
@@ -438,7 +427,6 @@ if __name__ == '__main__':
       try:
         key_file = open('conf/net/keys.json')
       except:
-        logging.debug("certificates not configured, falling back to sample, default certificates")
         key_file = open('conf/net/keys.json.sample')
       key_data = json.load(key_file)
       host_cert = key_data["host_certificate"]

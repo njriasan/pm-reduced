@@ -2,7 +2,7 @@
 #Configure web server
 
 #Pull the latest changes from the repo
-cd /usr/src/app && git pull origin master 
+cd /usr/src/app 
 
 #TODO: start cron jobs
 # change python environment
